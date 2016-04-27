@@ -14,7 +14,9 @@ body {
 }
 
 #logoimage {
+	display: inline;
     position: relative;
+	overflow: visible;
     left: -5px;
     top: 0px;
     width: 30px;
@@ -22,7 +24,9 @@ body {
 }
 
 #logotext {
+	display: inline;
     position: absolute;
+	overflow: visible;
     left: 50px;
     top: 0px;
     text-decoration: none;
@@ -33,46 +37,103 @@ body {
     pointer-events: auto;
 }
 
-#logintoggle1 {
-    display: block;
+#logouttoggle1 {
     position: fixed;
-    left: 250px;
+	float: left;
+	overflow: hidden;
+    left: 264px;
     top: 0px;
     margin: 0px;
     border: 0px solid aliceblue;
+	outline: 0;
     height: 40px;
     width: 81px;
     text-align: center;
     font-size: 13px;
-    color: aliceblue;
+    color: black;
     background: blue;
-    background-color: darkgrey;
+    background-color: transparent;
+}
 
-}#logintoggle0 {
+#logouttoggle0 {
     display: none;
     position: fixed;
-    left: 250px;
+	float: left;
+	overflow: hidden;
+    left: 264px;
     top: 0px;
     margin: 0px;
     border: 0px solid aliceblue;
+	outline: 0;
     height: 40px;
     width: 81px;
     text-align: center;
     font-size: 13px;
-    color: aliceblue;
+    color: black;
     background: blue;
     background-color: darkgrey;
 }
 
+#logouttoggle1:hover {
+	background-color: darkgrey;
+}
+
+#uploadbutton {
+    display: block;
+    position: fixed;
+	float: left;
+	overflow: hidden;
+    left: 344px;
+    top: 0px;
+    margin: 0px;
+    border: 0px solid aliceblue;
+	outline: 0;
+    height: 40px;
+    width: 81px;
+    text-align: center;
+    font-size: 13px;
+    color: black;
+    background: blue;
+    background-color: transparent;
+}
+
+#uploadbutton:hover {
+	background-color: darkgrey;
+}
+
+#albumsbutton {
+    display: block;
+    position: fixed;
+	float: left;
+	overflow: hidden;
+    left: 424px;
+    top: 0px;
+    margin: 0px;
+    border: 0px solid aliceblue;
+	outline: 0;
+    height: 40px;
+    width: 81px;
+    text-align: center;
+    font-size: 13px;
+    color: black;
+    background: blue;
+    background-color: transparent;
+}
+
+#albumsbutton:hover {
+	background-color: darkgrey;
+}
+	
 #srchinput {
     display: inline;
-    position: absolute;
-    right: 100px;
+    position: relative;
+    right: -400%;
     top: 10px;
     height: 20px;
     text-align: center;
     border: solid 1px darkgrey;
     border-radius: 4px;
+	margin: 0 0 0 0;
     color: black;
 }
 
@@ -90,7 +151,7 @@ body {
     display: none;
     position: fixed;
     background: darkgrey;
-    width: 286px;
+    width: 300px;
     height: 280px;
     left: 45px;
     top: 40px;
@@ -99,12 +160,16 @@ body {
 
 #logformline {
     position: relative;
-    top: -265px;
-    left: -15px;
-    display: flex;
-    width: 205px;
+    top: 0px;
+    left: -12px;
+    display: block;
+    width: 216px;
     height: 3px;
     background: #012345;
+}
+
+#n6us {
+	cursor: pointer;
 }
 
 #gif {
@@ -116,9 +181,9 @@ body {
 
 div.autor {
     position: absolute;
-    right: 0px;
+    right: 45%;
     bottom: 0px;
-
+	overflow: visible;
 }
 
 #fblink {
@@ -132,8 +197,9 @@ div.autor {
     right: 5px;
     bottom: 5px;
     padding: 0px;
-    border: 2px solid cornsilk;
+    border: 2px double cornsilk;
     background-color: cornsilk;
     font-family: Arial;
     font-size: 8px;
+	border-radius: 4px 4px 4px 4px;
 }

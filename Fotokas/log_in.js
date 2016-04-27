@@ -13,3 +13,8 @@ document.querySelector(".login-hide").addEventListener("click",
         document.querySelector("#logintoggle1").style.display="block";
     }
 );
+
+function closeWindow() {
+	window.open('index.php', '_self', '');
+	window.close();
+}
