@@ -6,11 +6,11 @@
 
 <html lang="et">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fotokas: msumla</title>
-    <link rel="shortcut icon" type="image/png" href="logo2.png">
+    <title>Fotokas: Tom'J</title>
+    <link rel="shortcut icon" type="image/png" href="Images/logo2.png">
     <link href="logout1.css" rel="stylesheet" type="text/css">
     <link href="logout2.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="styled.css" type="text/css">
@@ -21,7 +21,7 @@
 <body>
     <div class="mainarea">
         <p style="color:white; position: absolute; right: 200px; top: 70px;">See on lihtsalt sisu täiteks siin hetkel</p>
-        <img src="triangle.gif" id="gif" alt="gif">
+        <img src="Images/triangle.gif" id="gif" alt="gif">
 
         <div class="logform">
             <div id="logformline"></div>
@@ -59,34 +59,44 @@
         </form>
 
         <a href="indexed.php" id="logotext">
-            <img src="logo2.png" id="logoimage" alt="Logo">FOTOKAS
+            <img src="Images/logo2.png" id="logoimage" alt="Logo">FOTOKAS
         </a>
 
-        <div class="logout-show">
-            <button type="button" id="logouttoggle1">msumla ▼</button>
-        </div>
+		<div class="buttons">
+			<div class="logout-show">
+				<button type="button" id="logouttoggle1">Tom'J ▼</button>
+			</div>
 
-        <div class="logout-hide">
-            <button type="button" id="logouttoggle0">msumla ▲</button>
-        </div>
-		
-		<form method="post" action="upload.html" target="_blank">
-			<div class="upload">
-				<button type="submit" id="uploadbutton">Lae ülesse</button>
+			<div class="logout-hide">
+				<button type="button" id="logouttoggle0">Tom'J ▲</button>
 			</div>
-		</form>
-		
-		<form method="post" action="Uploads" target="_blank">
-			<div class="albums">
-				<button type="submit" id="albumsbutton">Albumid</button>
-			</div>
-		</form>
+			
+			<form method="post" action="upload.html" target="_blank">
+				<div class="upload">
+					<button type="submit" id="uploadbutton">Lae ülesse</button>
+				</div>
+			</form>
+			
+			<form method="post" action="Uploads" target="_blank">
+				<div class="albums">
+					<button type="submit" id="albumsbutton">Albumid</button>
+				</div>
+			</form>
+			
+			<form method="post" action="feedback.php">
+				<button type="button" id="feedbutton">Tagasiside</button>
+			</form>
+			
+			<form method="post" action="">
+				<button type="button" id="infobutton">Info</button>
+			</form>
+		</div>
     </div>
 
 
     <div class="autor">
             <a href="https://www.facebook.com/maku.margus" target="_blank" id="fblink">
-                <img src="fb.png" width="40px" height="30px" alt="fb">
+                <img src="Images/fb.png" width="40px" height="30px" alt="fb">
             </a>
         <p id="author">&copy; 2016 Margus Sumla</p>
     </div>

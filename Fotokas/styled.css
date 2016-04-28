@@ -37,11 +37,15 @@ body {
     pointer-events: auto;
 }
 
-#logouttoggle1 {
+.buttons {
+	display: inline;
+}
+
+#logouttoggle1, #logouttoggle0, #uploadbutton, #albumsbutton, #feedbutton, #infobutton {
+    display: block;
     position: fixed;
 	float: left;
 	overflow: hidden;
-    left: 264px;
     top: 0px;
     margin: 0px;
     border: 0px solid aliceblue;
@@ -53,15 +57,38 @@ body {
     color: black;
     background: blue;
     background-color: transparent;
+}
+
+#logouttoggle1:hover, #logouttoggle0:hover, #uploadbutton:hover, #albumsbutton:hover, #feedbutton:hover, #infobutton:hover {
+	background-color: darkgrey;
+}
+
+#logouttoggle1 {
+	display: block;
+    /*position: fixed;
+	float: left;
+	overflow: hidden;*/
+    left: 264px;
+    /*top: 0px;
+    margin: 0px;
+    border: 0px solid aliceblue;
+	outline: 0;
+    height: 40px;
+    width: 81px;
+    text-align: center;
+    font-size: 13px;
+    color: black;
+    background: blue;
+    background-color: transparent;*/
 }
 
 #logouttoggle0 {
     display: none;
-    position: fixed;
+    /*position: fixed;
 	float: left;
-	overflow: hidden;
+	overflow: hidden;*/
     left: 264px;
-    top: 0px;
+    /*top: 0px;
     margin: 0px;
     border: 0px solid aliceblue;
 	outline: 0;
@@ -70,21 +97,17 @@ body {
     text-align: center;
     font-size: 13px;
     color: black;
-    background: blue;
+    background: blue;*/
     background-color: darkgrey;
 }
 
-#logouttoggle1:hover {
-	background-color: darkgrey;
-}
-
 #uploadbutton {
-    display: block;
+    /*display: block;
     position: fixed;
 	float: left;
-	overflow: hidden;
+	overflow: hidden;*/
     left: 344px;
-    top: 0px;
+    /*top: 0px;
     margin: 0px;
     border: 0px solid aliceblue;
 	outline: 0;
@@ -94,20 +117,28 @@ body {
     font-size: 13px;
     color: black;
     background: blue;
-    background-color: transparent;
+    background-color: transparent;*/
 }
 
-#uploadbutton:hover {
+/*#uploadbutton:hover {
 	background-color: darkgrey;
-}
+}*/
 
 #albumsbutton {
-    display: block;
+	left: 424px;
+}
+
+/*#albumsbutton:hover {
+	background-color: darkgrey;
+}*/
+
+#feedbutton {
+    /*display: block;
     position: fixed;
 	float: left;
-	overflow: hidden;
-    left: 424px;
-    top: 0px;
+	overflow: hidden;*/
+    left: 504px;
+    /*top: 0px;
     margin: 0px;
     border: 0px solid aliceblue;
 	outline: 0;
@@ -117,11 +148,15 @@ body {
     font-size: 13px;
     color: black;
     background: blue;
-    background-color: transparent;
+    background-color: transparent;*/
 }
 
-#albumsbutton:hover {
+/*#feedbutton:hover {
 	background-color: darkgrey;
+}*/
+
+#infobutton {
+	left: 584px;
 }
 	
 #srchinput {
@@ -140,8 +175,6 @@ body {
 ::-moz-placeholder {
     font-size: 12px;
 }
-
-
 
 #srchbttn {
     display: none;

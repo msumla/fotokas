@@ -5,7 +5,7 @@ $dir = './Uploads/';
 //$ext = pathinfo($path, PATHINFO_EXTENSION);
 $files = putFilesInArray($_FILES['userfile']);
 
-echo '<pre>';
+// echo '<pre>';
 
 foreach($files as $val) {
 	$type = $val['type'];
@@ -18,8 +18,8 @@ foreach($files as $val) {
 	}
 }
 
-echo "Here is some more debugging info:\n";
-print_r($_FILES);
+// echo "Here is some more debugging info:\n";
+// print_r($_FILES);
 
 echo '<pre>';
 
@@ -36,4 +36,4 @@ function putFilesInArray($file){
     return $arr;
 }
 
-exec('python convertpix.py');
+//exec('python test.py');

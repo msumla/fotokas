@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 
 <!--TODO: JavaScript/Python dynamic webdings background-->
-<!--TODO: Settings, mainarea scroll, logout, sql, upload w/ py-->
+<!--TODO: Settings, mainarea scroll, sql, upload w/ py-->
 
 
 <html lang="et">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fotokas</title>
-    <link rel="shortcut icon" type="image/png" href="logo2.png">
+    <link rel="shortcut icon" type="image/png" href="Images/logo2.png">
     <link href="login1.css" rel="stylesheet" type="text/css">
     <link href="login2.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="style.css" type="text/css">
@@ -21,7 +21,7 @@
 <body>
     <div class="mainarea">
         <p style="color:white; position: absolute; right: 200px; top: 70px;">See on lihtsalt sisu täiteks siin hetkel</p>
-        <img src="triangle.gif" id="gif" alt="gif">
+        <img src="Images/triangle.gif" id="gif" alt="gif">
 
         <div class="logform">
             <div id="logformline"></div>
@@ -58,7 +58,7 @@
         </form>
 
         <a href="index.php" id="logotext">
-            <img src="logo2.png" id="logoimage" alt="Logo">FOTOKAS
+            <img src="Images/logo2.png" id="logoimage" alt="Logo">FOTOKAS
         </a>
 
         <div class="login-show">
@@ -73,7 +73,7 @@
 
     <div class="autor">
             <a href="https://www.facebook.com/maku.margus" target="_blank" id="fblink">
-                <img src="fb.png" width="40px" height="30px" alt="fb">
+                <img src="Images/fb.png" width="40px" height="30px" alt="fb">
             </a>
         <p id="author">&copy; 2016 Margus Sumla</p>
     </div>
