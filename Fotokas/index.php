@@ -10,20 +10,25 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fotokas</title>
-    <link rel="shortcut icon" type="image/png" href="Images/logo2.png">
+    <link rel="shortcut icon" type="image/png" href="Images/ikoon.png">
     <link href="login1.css" rel="stylesheet" type="text/css">
     <link href="login2.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Amatic+SC" />
 	<?php include 'Database/cookies.php'; ?>
 <!--	--><?php //header('Location: Database/cookies.php'); ?>
 </head>
 
 <body>
     <div class="mainarea">
-        <p style="color:white; position: absolute; right: 200px; top: 70px;">See on lihtsalt sisu täiteks siin hetkel</p>
-        <img src="Images/triangle.gif" id="gif" alt="gif">
+	
+		<div id="hover">Hover</div>
+		<div id="stuff">stuff</div>
+	
+        <!--<p style="color:white; position: absolute; right: 200px; top: 70px;">See on lihtsalt sisu täiteks siin hetkel</p>
+        <img src="Images/triangle.gif" id="gif" alt="gif">-->
 
-        <div class="logform">
+        <div class="logform" id="logform">
             <div id="logformline"></div>
 
             <form class="form-signin" action="login.php" method="POST">
@@ -31,7 +36,7 @@
                 <label for="inputEmail" class="sr-only">E-maili aadress</label>
                 <input type="email" id="inputEmail" name="inputemail" class="form-control" placeholder="E-maili aadress" required>
                 <label for="inputPassword" class="sr-only">Parool</label>
-                <input type="password" id="inputPassword" name="inputpassword" class="form-control" placeholder="Püsiparool" required minlength="8">
+                <input type="password" id="inputPassword" name="inputpassword" class="form-control" placeholder="Püsiparool" required minlength="1">
                 <div class="checkbox">
                     <label>
                         <input type="checkbox" value="remember-me" checked>Jäta mind meelde
@@ -58,7 +63,7 @@
         </form>
 
         <a href="index.php" id="logotext">
-            <img src="Images/logo2.png" id="logoimage" alt="Logo">FOTOKAS
+            <img src="Images/ikoon.png" id="logoimage" alt="Logo">FOTOKAS
         </a>
 
         <div class="login-show">
