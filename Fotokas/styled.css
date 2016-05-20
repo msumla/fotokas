@@ -2,30 +2,119 @@ body {
     background-color: #012345;
 }
 
-.heading {
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+.mainarea {
+    display: inline;
     position: fixed;
-    left: 0px;
-    top: 0px;
+    left: 10%;
+    top: 120px;
+    width: 80%;
+    height: 75%;
     background: lightgrey;
-    height: 40px;
+    overflow: hidden;
+    border-radius: 10px 10px 10px 10px;
+}
+
+#icon-back {
+    background-image: url('Images/icon-back.png');
+    background-repeat: no-repeat;
+    position: relative;
+    display: block;
+    vertical-align: middle;
+    horizontal-align: middle;
     width: 100%;
-    padding: 0px;
+    height: 100%;
+    left: 50%;
+    margin: auto;
+    /*max-width: 90%;
+    max-height: 90%;*/
+}
+
+.logform {
+    display: none;
+    position: fixed;
+    background: darkgrey;
+    width: 300px;
+    height: 280px;
+    top: 89px;
+    right: 10%;
+    border-radius: 10px 0px 5px 5px;
+}
+
+#logformline {
+    display: block;
+    position: relative;
+    top: 0px;
+    left: -12px;
+    width: 216px;
+    height: 3px;
+    background: #012345;
+}
+
+#upload-box {
+    display: none;
+    position: absolute;
+    width: 80%;
+    height: 100px;
+    top: 120px;
+    left: 10%;
+}
+
+#albums-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.albums-area {
+    display: none;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 99%;
+    height: 99%;
+}
+
+.heading {
     display: inline-flex;
+    position: fixed;
+    left: 10%;
+    top: 30px;
+    background: lightgrey;
+    height: 60px;
+    width: 80%;
+    padding: 0px;
+}
+
+.heading-line {
+    display: none;
+    position: fixed;
+    left: 10%;
+    top: 90px;
+    background: lightgrey;
+    height: 30px;
+    width: 80%;
+    padding: 0px;
 }
 
 #logoimage {
 	display: inline;
-    position: relative;
+    position: fixed;
 	overflow: visible;
-    left: -5px;
-    top: 0px;
-    width: 30px;
-    height: 30px;
+    left: -90%;
+    top: 5px;
+    width: 50px;
+    height: 50px;
 }
 
 #logotext {
 	display: inline;
-    position: absolute;
+    position: relative;
 	overflow: visible;
     left: 50px;
     top: 0px;
@@ -37,95 +126,92 @@ body {
     pointer-events: auto;
 }
 
-.buttons {
-	display: inline;
-}
-
-#logouttoggle1, #logouttoggle0, #uploadbutton, #albumsbutton, #feedbutton, #infobutton {
-    display: block;
-    position: fixed;
+#logouttoggle1, #logouttoggle0, #uploadbutton,
+#albumsbutton, #feedbutton, #infobutton, .user-name, #uploadbutton-text {
+    display: inline-block;
+    position: relative;
 	float: left;
 	overflow: hidden;
     top: 0px;
     margin: 0px;
     border: 0px solid aliceblue;
 	outline: 0;
-    height: 40px;
-    width: 81px;
+    height: 60px;
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
     text-align: center;
-    font-size: 13px;
+    font-size: 16px;
     color: black;
     background: blue;
     background-color: transparent;
 }
 
-#logouttoggle1:hover, #logouttoggle0:hover, #uploadbutton:hover, #albumsbutton:hover, #feedbutton:hover, #infobutton:hover {
+#logouttoggle1:hover, #logouttoggle0:hover, #uploadbutton:hover,
+#albumsbutton:hover, #feedbutton:hover, #infobutton:hover {
 	background-color: darkgrey;
 }
 
 #logouttoggle1 {
-	display: block;
-    /*position: fixed;
-	float: left;
-	overflow: hidden;*/
-    left: 264px;
-    /*top: 0px;
-    margin: 0px;
-    border: 0px solid aliceblue;
-	outline: 0;
-    height: 40px;
-    width: 81px;
-    text-align: center;
-    font-size: 13px;
-    color: black;
-    background: blue;
-    background-color: transparent;*/
+	display: inline-block;
+    position: fixed;
+    top: 30px;
+    right: 10%;
 }
 
 #logouttoggle0 {
     display: none;
-    /*position: fixed;
-	float: left;
-	overflow: hidden;*/
-    left: 264px;
-    /*top: 0px;
-    margin: 0px;
-    border: 0px solid aliceblue;
-	outline: 0;
-    height: 40px;
-    width: 81px;
-    text-align: center;
-    font-size: 13px;
-    color: black;
-    background: blue;*/
+    position: fixed;
+    top: 30px;
+    right: 10%;
     background-color: darkgrey;
 }
 
-#uploadbutton {
+.user-name {
+    position: relative;
+    right: -90px;
+    overflow: hidden;
+    float: right;
+    top: 0px;
+    color: black;
+}
+
+.upload {
+    display: inline-block;
+    left: 30%;
+    width: 60px;
+    min-width: 60px;
+}
+
+#uploadbutton-text {
     /*display: block;
     position: fixed;
 	float: left;
 	overflow: hidden;*/
-    left: 344px;
+    left: 30%;
+    display: none;
     /*top: 0px;
     margin: 0px;
     border: 0px solid aliceblue;
 	outline: 0;
-    height: 40px;
-    width: 81px;
-    text-align: center;
+    height: 40px;*/
+    width: 60px;
+    min-width: 60px;
+    /*text-align: center;
     font-size: 13px;
     color: black;
     background: blue;
     background-color: transparent;*/
 }
 
-/*#uploadbutton:hover {
+.upload:hover #uploadbutton-text {
+    position: fixed;
+    display: inline-block;
 	background-color: darkgrey;
-}*/
+}
 
 #albumsbutton {
-	left: 424px;
+	left: 30%;
 }
 
 /*#albumsbutton:hover {
@@ -137,7 +223,7 @@ body {
     position: fixed;
 	float: left;
 	overflow: hidden;*/
-    left: 504px;
+    left: 30%;
     /*top: 0px;
     margin: 0px;
     border: 0px solid aliceblue;
@@ -156,15 +242,15 @@ body {
 }*/
 
 #infobutton {
-	left: 584px;
+	left: 30%;
 }
 	
 #srchinput {
-    display: inline;
+    display: none;
     position: relative;
     right: -400%;
-    top: 10px;
-    height: 20px;
+    top: 17.5px;
+    height: 25px;
     text-align: center;
     border: solid 1px darkgrey;
     border-radius: 4px;
@@ -180,36 +266,8 @@ body {
     display: none;
 }
 
-.logform {
-    display: none;
-    position: fixed;
-    background: darkgrey;
-    width: 300px;
-    height: 280px;
-    left: 45px;
-    top: 40px;
-    border-radius: 10px 0px 5px 5px;
-}
-
-#logformline {
-    position: relative;
-    top: 0px;
-    left: -12px;
-    display: block;
-    width: 216px;
-    height: 3px;
-    background: #012345;
-}
-
 #n6us {
 	cursor: pointer;
-}
-
-#gif {
-    position: absolute;
-    top: 100px;
-    right: 50px;
-    cursor: crosshair;
 }
 
 div.autor {
