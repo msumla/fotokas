@@ -1,6 +1,6 @@
 <?php
 
-// TODO: SQL
+//session_start();
 
 $datafile = 'Database/login_data.txt';
 $database = file_get_contents($datafile);
@@ -55,8 +55,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 					// header('Content-Type: text/plain; charset=utf-8');
 					// echo 'Login';
 					require('indexed.php');
+					$_SESSION['inputemail'] = $_POST['inputemail'];
 					?><script type="text/javascript">
-						document.title = 'Fotokas: ';
+						document.getElementById("title").innerHTML = 'Fotokas: <?= $_POST['inputemail'] ?>';
+						document.getElementById("user-name").innerHTML = "<?= $_POST['inputemail'] ?>";
 					</script><?php
 					exit;
 				}else{
@@ -100,3 +102,8 @@ function logFinder($em, $pw, $arr){
 }
 
 ?>
+
+<html>
+    <script src="log_out.js" type="text/javascript"></script>
+</html>
+

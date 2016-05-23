@@ -2,12 +2,31 @@ body {
     background-color: #012345;
 }
 
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+
 .heading {
     position: fixed;
-    left: 0px;
-    top: 0px;
+    left: 10%;
+    top: 30px;
     background: lightgrey;
-    height: 40px;
+    height: 60px;
+    width: 80%;
+    padding: 0px;
+    display: inline-flex;
+}
+
+.heading-line {
+    display: none;
+    position: fixed;
+    left: 0px;
+    top: 60px;
+    background: lightgrey;
+    height: 30px;
     width: 100%;
     padding: 0px;
     display: inline-flex;
@@ -17,15 +36,15 @@ body {
 	display: inline;
     position: relative;
 	overflow: visible;
-    left: -5px;
-    top: 0px;
-    width: 30px;
-    height: 30px;
+    left: -90%;
+    top: 5px;
+    width: 50px;
+    height: 50px;
 }
 
 #logotext {
 	display: inline;
-    position: absolute;
+    position: relative;
 	overflow: visible;
     left: 50px;
     top: 0px;
@@ -37,30 +56,122 @@ body {
     pointer-events: auto;
 }
 
-#logintoggle1 {
+.buttons {
+	display: inline;
+}
+
+#logintoggle1, #logintoggle0, #uploadbutton,
+#albumsbutton, #feedbutton, #infobutton, .user-name {
     display: block;
     position: fixed;
 	float: left;
-    left: 264px;
-    top: 0px;
+	overflow: hidden;
+    top: 30px;
     margin: 0px;
     border: 0px solid aliceblue;
 	outline: 0;
-    height: 40px;
-    width: 81px;
+    height: 60px;
+    width: 80px;
+    min-width: 80px;
+    max-width: 80px;
     text-align: center;
-    font-size: 13px;
+    font-size: 16px;
     color: black;
     background: blue;
     background-color: transparent;
 }
 
+#logintoggle1:hover, #logintoggle0:hover, #uploadbutton:hover,
+#albumsbutton:hover, #feedbutton:hover, #infobutton:hover {
+	background-color: darkgrey;
+}
+
+#logintoggle1 {
+	display: block;
+    /*position: fixed;
+	float: left;
+	overflow: hidden;*/
+    right: 11%;
+    /*top: 0px;
+    margin: 0px;
+    border: 0px solid aliceblue;
+	outline: 0;
+    height: 40px;*/
+    min-width: 60px;
+    /*text-align: center;
+    font-size: 13px;
+    color: black;
+    background: blue;
+    background-color: transparent;*/
+}
+
 #logintoggle0 {
     display: none;
+    /*position: fixed;
+	float: left;
+	overflow: hidden;*/
+    right: 11%;
+    /*top: 0px;
+    margin: 0px;
+    border: 0px solid aliceblue;
+	outline: 0;
+    height: 40px;*/
+    min-width: 60px;/*
+    text-align: center;
+    font-size: 13px;
+    color: black;
+    background: blue;*/
+    background-color: darkgrey;
+}
+
+.user-name {
+    display: block;
+    position: fixed;
+    right: 16%;
+    width: inherit;
+    overflow: inherit;
+    top: 50px;
+    color: black;
+}
+
+#uploadbutton {
+    /*display: block;
     position: fixed;
 	float: left;
-    left: 264px;
-    top: 0px;
+	overflow: hidden;*/
+    left: 30%;
+    /*top: 0px;
+    margin: 0px;
+    border: 0px solid aliceblue;
+	outline: 0;
+    height: 40px;*/
+    min-width: 60px;
+    /*text-align: center;
+    font-size: 13px;
+    color: black;
+    background: blue;
+    background-color: transparent;*/
+}
+
+/*#uploadbutton:hover {
+	background-color: darkgrey;
+}*/
+
+#albumsbutton {
+	left: 37%;
+}
+
+/*#albumsbutton:hover {
+	background-color: darkgrey;
+}*/
+
+#feedbutton {
+    /*display: block;
+    position: fixed;
+	float: left;
+	overflow: hidden;*/
+    left: 47%;
+    /*top: 0px;
     margin: 0px;
     border: 0px solid aliceblue;
 	outline: 0;
@@ -70,19 +181,23 @@ body {
     font-size: 13px;
     color: black;
     background: blue;
-    background-color: darkgrey;
+    background-color: transparent;*/
 }
 
-#logintoggle1:hover {
+/*#feedbutton:hover {
 	background-color: darkgrey;
-}
+}*/
 
+#infobutton {
+	left: 57%;
+}
+	
 #srchinput {
-    display: inline;
+    display: none;
     position: relative;
     right: -400%;
-    top: 10px;
-    height: 20px;
+    top: 17.5px;
+    height: 25px;
     text-align: center;
     border: solid 1px darkgrey;
     border-radius: 4px;
@@ -93,8 +208,6 @@ body {
 ::-moz-placeholder {
     font-size: 12px;
 }
-
-
 
 #srchbttn {
     display: none;
@@ -125,11 +238,15 @@ body {
 	cursor: pointer;
 }
 
-#gif {
-    position: absolute;
-    top: 100px;
-    right: 50px;
-    cursor: crosshair;
+.mainarea {
+    position: fixed;
+    left: 10%;
+    top: 90px;
+    background: lightgrey;
+    height: 60px;
+    width: 80%;
+    padding: 0px;
+    display: inline-flex;
 }
 
 div.autor {

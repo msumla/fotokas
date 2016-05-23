@@ -1,6 +1,7 @@
 <!doctype html>
-<html>
+<html lang="et">
 	<head>
+	<meta charset="UTF-8">
 	<title>Upload</title>
 	<style>
 	    body {
@@ -11,10 +12,23 @@
 	</head>
 
 	<body>
-		<form enctype="multipart/form-data" action="upload.php" method="POST">
-			<input type="hidden" name="MAX_FILE_SIZE" value="3000000" />
-			    Send this file: <input name="userfile[]" type="file" multiple />
-			<input type="submit" value="Send File" />
-		</form>
+	    <div class="upload">
+		    <form enctype="multipart/form-data" action="upload.php" method="POST">
+			    <input type="hidden" accept="image/*" id="uploadbutton" src="Images/Icons/upload.png" alt="Upload" name="MAX_FILE_SIZE" value="2000000">
+			        Vali jpeg/jpg/png-formaadis pildid: <input name="userfile[]" type="file" multiple>
+			    <input type="submit" value="Saada">
+
+                <div id="uploadbutton-text">
+                    Lae ülesse
+                </div>
+		    </form>
+		</div>
 	</body>
 </html>
+
+<!--<div class="upload">
+    <input type="image" accept="image/*" id="uploadbutton" src="Images/Icons/upload.png" alt="Upload">
+    <div id="uploadbutton-text">
+        Lae ülesse
+    </div>
+</div>-->

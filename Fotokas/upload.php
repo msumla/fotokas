@@ -3,8 +3,6 @@
 // image magic php binding for thumbnailing
 $dir_ups = './Uploads/';
 $dir_thumbs = './Images/Thumbnails/';
-// $path = $dir . basename($_FILES['userfile']['name']);
-//$ext = pathinfo($path, PATHINFO_EXTENSION);
 $files = putFilesInArray($_FILES['userfile']);
 
 echo '<pre>';
@@ -22,8 +20,6 @@ if( file_exists($dir_ups) ){
         }
     }
 }
-// echo "Here is some more debugging info:\n";
-// print_r($_FILES);
 
 echo '<pre>';
 
@@ -43,9 +39,7 @@ function putFilesInArray($file){
 function convertToThumbnail($image){
     $time = new DateTime();
     $time = $time -> format('YmdHis');
-    global $dir_ups;
     global $dir_thumbs;
-//    $images = glob($dir_ups . '*.{jpeg,jpg,png}', GLOB_BRACE);
 
         if( file_exists($image) ){
             $img = new Imagick($image);

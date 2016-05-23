@@ -62,6 +62,7 @@ body {
     position: relative;
     background: transparent;
     border: transparent;
+	outline: 0;
     right: 4px;
     color: #337ab7;
 }

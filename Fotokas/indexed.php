@@ -1,107 +1,140 @@
 <!DOCTYPE html>
 
-<!--TODO: JavaScript/Python dynamic webdings background-->
-<!--TODO: Settings, mainarea scroll, logout, sql, upload w/ py-->
+<!--TODO: Settings, logout, sql, php variables in html, ENG-->
 
 
 <html lang="et">
 <head>
     <meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Fotokas: Tom'J</title>
-    <link rel="shortcut icon" type="image/png" href="Images/logo2.png">
+<!--	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+    <title id="title">Fotokas: Kasutaja</title>
+    <link rel="shortcut icon" type="image/png" href="Images/Icons/icon.png">
     <link href="logout1.css" rel="stylesheet" type="text/css">
     <link href="logout2.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="styled.css" type="text/css">
-	<?php include 'Database/cookies.php'; ?>
+	<?php //include 'Database/cookies.php'; ?>
 <!--	--><?php //header('Location: Database/cookies.php'); ?>
 </head>
 
 <body>
     <div class="mainarea">
-        <p style="color:white; position: absolute; right: 200px; top: 70px;">See on lihtsalt sisu täiteks siin hetkel</p>
-        <img src="Images/triangle.gif" id="gif" alt="gif">
+        <div id="icon-back">
+            <img src="Images/Icons/icon-back.png" alt="Back">
+        </div>
+        
+        <div class="upload-area">
+            <!--<iframe src="upload.html" id="upload-box"></iframe>-->
+		        <form enctype="multipart/form-data" action="upload.php" method="POST">
+			        <input type="hidden" accept="image/*" id="uploadbutton" src="Images/Icons/upload.png" alt="Upload" name="MAX_FILE_SIZE" value="2000000">
+			            Vali jpeg/jpg/png-formaadis pildid: <input name="userfile[]" type="file" multiple>
+			        <input type="submit" value="Saada">
+
+                    <div id="uploadbutton-text">
+                        Lae ülesse
+                    </div>
+		        </form>
+        </div>
+        
+        <div class="albums-area">
+            <iframe src="albums.php" id="albums-box"></iframe>
+        </div>
+        
+        <div class="feed-area">
+            <form method="POST">
+                <textarea id="feed-box" placeholder="Siia saad oma mõtteid kirja panna ..">
+                </textarea
+            </form>
+        </div>
 
         <div class="logform">
-            <div id="logformline"></div>
+            <div id="logformline">
+        </div>
 
             <form class="form-signin" action="index.php" method="POST">
-        <!--        <h2 class="form-signin-heading">Palun logi sisse</h2>
-                <label for="inputEmail" class="sr-only">E-maili aadress</label>
-                <input type="email" id="inputEmail" name="inputemail" class="form-control" placeholder="E-maili aadress">
-                <label for="inputPassword" class="sr-only">Parool</label>
-                <input type="password" id="inputPassword" name="inputpassword" class="form-control" placeholder="Püsiparool">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" value="remember-me" checked>Jäta mind meelde
-                    </label>
-                </div>
-        -->        
 				<p>Seaded</p>
 				<button class="btn btn-lg btn-primary btn-block" type="submit" name="logoutb">Logi välja</button>
-        <!--        <div class="form-signin-log">
-                    <label style="font-weight: normal;">
-                        <input type="checkbox" class="regbox" name="regbox" value="n6us" checked>Nõus
-                    </label>
-                    <a href="license.html" target="_blank">tingimustega</a>&nbsp;ja
-                    <button type="button" class="regbutton" name="reginb">registreerun</button>
-                </div>
-        -->    </form>
+            </form>
         </div>
     </div>
 
     <div class="heading">
-        <form method="get" action="http://www.google.com/search" target="_blank">
+        <!--<form method="get" action="http://www.google.com/search" target="_blank">
             <input type="text" name="q" id="srchinput" size="30"
                    maxlength="255" placeholder="Otsing: Google">
             <input type="submit" id="srchbttn">
-        </form>
+        </form>-->
 
-        <a href="indexed.php" id="logotext">
-            <img src="Images/logo2.png" id="logoimage" alt="Logo">FOTOKAS
+        <a href="indexed.php" id="home-icon">
+            <img src="Images/Icons/icon-back.png" id="logoimage" alt="Logo">
         </a>
 
 		<div class="buttons">
-			<div class="logout-show">
-				<button type="button" id="logouttoggle1">Tom'J ▼</button>
-			</div>
+			<table>
+			    <tr>
+			        <td>
+			            <div class="upload">
+                            <input type="image" id="uploadbutton" img src="Images/Icons/upload.png" alt="Upload">
+			            </div>
+			        </td>
+			
+			        <td>
+			            <div class="albums">
+                            <input type="image" id="albumsbutton" img src="Images/Icons/albums.png" alt="Albums">
+			            </div>
+			        </td>
+			
+			        <td>
+			            <div class="feedback">
+			                <form method="post" action="feedback.php">
+                                <input type="image" id="feedbutton" img src="Images/Icons/feedback.png" alt="Feedback">
+			                    </button>
+			                </form>
+			            <div>
+			        </td>
+			
+			        <td>
+                        <div class="info">
+                            <input type="image" id="infobutton" img src="Images/Icons/info.png" alt="Info">
+			            </div>
+			        <td>
 
-			<div class="logout-hide">
-				<button type="button" id="logouttoggle0">Tom'J ▲</button>
-			</div>
-			
-			<form method="post" action="upload.html" target="_blank">
-				<div class="upload">
-					<button type="submit" id="uploadbutton">Lae ülesse</button>
-				</div>
-			</form>
-			
-			<form method="post" action="Uploads" target="_blank">
-				<div class="albums">
-					<button type="submit" id="albumsbutton">Albumid</button>
-				</div>
-			</form>
-			
-			<form method="post" action="feedback.php">
-				<button type="button" id="feedbutton">Tagasiside</button>
-			</form>
-			
-			<form method="post" action="">
-				<button type="button" id="infobutton">Info</button>
-			</form>
+                    <td>
+			            <div class="user-name" id="user-name">
+                            PHP kasutajanimi
+			            </div>
+                    </td>
+                    
+                    <td>
+			            <div class="logout-show">
+				            <input type="image" id="logouttoggle1" img src="Images/Icons/menu.png" alt="Menu" width="60px" height="60px">
+			            </div>
+                    </td>
+
+                    <td>
+			            <div class="logout-hide">
+				            <input type="image" id="logouttoggle0" img src="Images/Icons/menu.png" alt="Menu" width="60px" height="60px">
+			            </div>
+                    </td>
+		        </tr>
+		    </table>
+		    
+            <div class="heading-line">
+            </div>
 		</div>
     </div>
 
 
+
     <div class="autor">
             <a href="https://www.facebook.com/maku.margus" target="_blank" id="fblink">
-                <img src="Images/fb.png" width="40px" height="30px" alt="fb">
+                <img src="Images/Icons/fb.png" width="40px" height="30px" alt="fb">
             </a>
         <p id="author">&copy; 2016 Margus Sumla</p>
     </div>
 
-	<script src="log_out.js" type="text/javascript"></script>
+	<!--<script src="log_out.js" type="text/javascript"></script>-->
+	<script src="buttons.js" type="text/javascript"></script>
 
 </body>
 
