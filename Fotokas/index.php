@@ -17,22 +17,26 @@
 </head>
 
 <body>
+	<div class="preload">
+	</div>
+
+	<div class="content">
+	
     <div class="mainarea">
         <div id="icon-back">
             <img src="Images/Icons/icon-back.png" alt="Back">
         </div>
 
         <div class="upload-area">
-            <!--<iframe src="upload.html" id="upload-box"></iframe>-->
-	            <form enctype="multipart/form-data" action="upload.php" method="POST">
-		            <input type="hidden" accept="image/*" id="uploadbutton" src="Images/Icons/upload.png" alt="Upload" name="MAX_FILE_SIZE" value="2000000">
-		                Vali jpeg/jpg/png-formaadis pildid: <input name="userfile[]" type="file" multiple>
-		            <input type="submit" value="Saada">
+            <form enctype="multipart/form-data" action="upload.php" method="POST">
+                <input type="hidden" accept="image/*" id="uploadbutton" src="Images/Icons/upload.png" alt="Upload" name="MAX_FILE_SIZE" value="2000000">
+                    Vali kuni 2MB suuruses pilte: <input name="userfile[]" type="file" multiple>
+                <input type="submit" value="Saada">
 
-                    <div id="uploadbutton-text">
-                        Lae ülesse
-                    </div>
-	            </form>
+                <div id="uploadbutton-text">
+                    Lae ülesse
+                </div>
+            </form>
         </div>
         
         <div class="albums-area">
@@ -40,59 +44,64 @@
         </div>
         
         <div class="feed-area">
-            <form method="POST">
-                <textarea id="feed-box" placeholder="Siia saad oma mõtteid kirja panna .."></textarea>
+            <form method="POST" action="feedback.php">
+                <textarea name="feedback-text" id="feed-box" placeholder="Siia saad oma mõtted kirja panna .."></textarea>
+                <button type="submit" id="feed-submit-button">Saada</button>
             </form>
         </div>
-
-        <div class="login-area">
-            <div class="container">
-                <form class="form-signin" method="post" action="authenticate.php">
-                    <h2 class="form-signin-heading">Logi sisse</h2>
-                    <label for="inputEmail" class="sr-only">E-maili aadress</label>
-                    <input type="email" name="inputemail" id="inputEmail" class="form-control" placeholder="E-maili aadress" required autofocus>
-                    <label for="inputPassword" class="sr-only">Parool</label>
-                    <input type="password" name="inputpassword" id="inputPassword" class="form-control" placeholder="Püsiparool" required>
-                    <div class="checkbox">
-                        <label>
-                            <input type="checkbox" value="remember-me">Jäta mind meelde
-                        </label>
-                    </div>
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" name="loginb">Logi sisse</button>
-                </form>
+        
+        <div class="reg_log_menu-area">
+            <div class="login-area">
+                <div class="container">
+                    <form class="form-signin" method="post" action="authenticate.php">
+                        <h2 class="form-signin-heading">Logi sisse</h2>
+                        <label for="inputEmail" class="sr-only">E-maili aadress</label>
+                        <input type="email" name="inputemail" id="inputEmail" class="form-control" placeholder="E-maili aadress" required autofocus>
+                        <label for="inputPassword" class="sr-only">Parool</label>
+                        <input type="password" name="inputpassword" id="inputPassword" class="form-control" placeholder="Püsiparool" required>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="remember-me">Jäta mind meelde
+                            </label>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="loginb">Logi sisse</button>
+                    </form>
+                </div>
+            </div>
+        
+            <div class="regin-area">
+                <div class="container">
+                    <form class="form-signin" method="post" action="authenticate.php">
+                        <h2 class="form-signin-heading">Registreeri</h2>
+                        <label for="inputEmail" class="sr-only">E-maili aadress</label>
+                        <input type="email" name="inputemail" id="inputEmail" class="form-control" placeholder="E-maili aadress" maxlength="15" required autofocus>
+                        <label for="inputPassword" class="sr-only">Parool</label>
+                        <input type="password" name="inputpassword" id="inputPassword" class="form-control" placeholder="Püsiparool" required>
+                        <div class="checkbox">
+                            <label style="font-weight: normal;">
+                                <input type="checkbox" class="regbox" name="regbox" value="n6us" style="left: 16px; top: -2px;" checked>
+                            </label>
+                            Nõustun
+                            <a href="license.html" target="_blank">tingimustega</a>
+                        </div>
+              
+                        <button class="btn btn-lg btn-primary btn-block" type="submit" name="reginb">Registreeri</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="menu-area">
+                <!--<form class="form-signin" action="index.php" method="POST">
+				    <p>Seaded</p>
+				    <button class="btn btn-lg btn-primary btn-block" type="submit" name="logoutb">Logi välja</button>
+                </form>-->
+                
+                <!--<form class="form-signin" method="post" action="login.php">
+                    <input type="hidden" name="action" value="logout">
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" name="logoutb">Logi välja</button>
+                </form>-->
             </div>
         </div>
-    
-        <div class="regin-area">
-            <div class="container">
-                <form class="form-signin" method="post" action="authenticate.php">
-                    <h2 class="form-signin-heading">Registreeri</h2>
-                    <label for="inputEmail" class="sr-only">E-maili aadress</label>
-                    <input type="email" name="inputemail" id="inputEmail" class="form-control" placeholder="E-maili aadress" required autofocus>
-                    <label for="inputPassword" class="sr-only">Parool</label>
-                    <input type="password" name="inputpassword" id="inputPassword" class="form-control" placeholder="Püsiparool" required>
-                    <div class="checkbox">
-                        <label style="font-weight: normal;">
-                            <input type="checkbox" class="regbox" name="regbox" value="n6us" style="left: 16px; top: -2px;" checked>
-                        </label>
-                        Nõustun
-                        <a href="license.html" target="_blank">tingimustega</a>
-                    </div>
-          
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" name="reginb">Registreeri</button>
-                </form>
-            </div>
-        </div>
-            
-            <!--<form class="form-signin" action="index.php" method="POST">
-				<p>Seaded</p>
-				<button class="btn btn-lg btn-primary btn-block" type="submit" name="logoutb">Logi välja</button>
-            </form>-->
-            
-            <!--<form class="form-signin" method="post" action="login.php">
-                <input type="hidden" name="action" value="logout">
-                <button class="btn btn-lg btn-primary btn-block" type="submit" name="logoutb">Logi välja</button>
-            </form>-->
     </div>
     
     <div class="heading">
@@ -101,7 +110,11 @@
     
         <div class="heading-line">
             <div class="user-name" id="user-name">
-
+                <?php if( !empty($_SESSION['input_user']) ): ?>
+                    <?= $_SESSION['input_user'] ?>
+                <?php else: ?>
+                    Palun logi sisse
+                <?php endif ?>
             </div>
         </div>
 
@@ -146,7 +159,9 @@
 			
 			        <td>
                         <div class="info">
-                            <input type="image" id="infobutton" img src="Images/Icons/info.png" alt="Info">
+                            <a href="license.html" target="_blank">
+                                <input type="image" id="infobutton" img src="Images/Icons/info.png" alt="Info">
+                            </a>
 			            </div>
 			        <td>
 
@@ -197,7 +212,9 @@
         <p id="author">&copy; 2016 Margus Sumla</p>
     </div>
 
-<!--	<script src="log_in.js" type="text/javascript"></script> -->
+	</div> <!-- main content after loading -->
+
 	<script src="buttons.js" type="text/javascript"></script>
+	
 </body>
 </html>

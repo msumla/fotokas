@@ -6,10 +6,10 @@ $datafile = 'Database/login_data.txt';
 $database = file_get_contents($datafile);
 $database = json_decode($database, true);
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-	if(isset($_POST['reginb'])){
-		if(!empty($_POST['inputemail']) && !empty($_POST['inputpassword'])){
-			if(!isset($_POST['regbox'])){
+if ($_SERVER['REQUEST_METHOD'] == 'POST' ){
+	if( isset($_POST['reginb']) ){
+		if( !empty($_POST['inputemail']) && !empty($_POST['inputpassword']) ){
+			if( !isset($_POST['regbox']) ){
 				require('index.php');
 				?><script type="text/javascript">
 					window.open('license.html', '_blank');
@@ -17,8 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 				exit;
 			}
 
-			if(isset($_POST['regbox'])){
-				if(regFinder($_POST['inputemail'], $database)==0){
+			if( isset($_POST['regbox']) ){
+				if( regFinder($_POST['inputemail'], $database)==0 ){
 					$em = $_POST['inputemail'];
 					$pw = $_POST['inputpassword'];
 					
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 					exit;
 				}
 				
-				if(regFinder($_POST['inputemail'], $database)==1){
+				if( regFinder($_POST['inputemail'], $database)==1 ){
 					?><script type="text/javascript">
 						var em = '<?php echo $_POST['inputemail']; ?>';
 						alert(em + ' on juba registreeritud, proovi uuesti!');
@@ -46,10 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		}
 	}
 	
-	if(isset($_POST['loginb'])){
-		if(!empty($_POST['inputemail']) || !empty($_POST['inputpassword'])){
-			if(isset($_POST['inputemail']) && isset($_POST['inputpassword'])){
-				if(logFinder($_POST['inputemail'], $_POST['inputpassword'], $database)==1){
+	if( isset($_POST['loginb']) ){
+		if( !empty($_POST['inputemail']) || !empty($_POST['inputpassword']) ){
+			if( isset($_POST['inputemail']) && isset($_POST['inputpassword']) ){
+				if( logFinder($_POST['inputemail'], $_POST['inputpassword'], $database)==1 ){
 					require('indexed.php');
 					$_SESSION['inputemail'] = $_POST['inputemail'];
 					?><script type="text/javascript">
@@ -70,8 +70,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 }
 
 function regFinder($em, $arr){
-	foreach($arr as $i){
-		if($em == $i['em']){
+	foreach( $arr as $i ){
+		if( em == $i['em'] ){
 			$boo = 1;
 			break;
 		}else{
@@ -82,13 +82,13 @@ function regFinder($em, $arr){
 }
 
 function logFinder($em, $pw, $arr){
-	foreach($arr as $i){
-		if($em == $i['em'] && password_verify($pw, $i['pw'])){
+	foreach( $arr as $i ){
+		if( $em == $i['em'] && password_verify($pw, $i['pw']) ){
 			$boo = 1;
 			break;
 		}
 		
-		if($em != $i['em'] || $pw != $i['pw']){
+		if( $em != $i['em'] || $pw != $i['pw'] ){
 			$boo = 0;
 		}
 	}
