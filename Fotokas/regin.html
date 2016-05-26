@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="login1.css" rel="stylesheet">
+    <link href="login2.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <form class="form-signin" method="post" action="authenticate.php">
+            <h2 class="form-signin-heading">Registreeri</h2>
+            <label for="inputEmail" class="sr-only">E-maili aadress</label>
+            <input type="email" name="inputemail" id="inputEmail" class="form-control" placeholder="E-maili aadress" required autofocus>
+            <label for="inputPassword" class="sr-only">Parool</label>
+            <input type="password" name="inputpassword" id="inputPassword" class="form-control" placeholder="Püsiparool" required>
+            <div class="checkbox">
+                <label style="font-weight: normal;">
+                    <input type="checkbox" class="regbox" name="regbox" value="n6us" style="left: 16px; top: -2px;" checked>
+                </label>
+                Nõustun
+                <a href="license.html" target="_blank">tingimustega</a>
+            </div>
+  
+            <button class="btn btn-lg btn-primary btn-block" type="submit" name="reginb">Registreeri</button>
+        </form>
+    </div>
+</body>
+</html>

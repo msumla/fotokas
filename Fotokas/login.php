@@ -1,6 +1,6 @@
 <?php
 
-//session_start();
+session_start();
 
 $datafile = 'Database/login_data.txt';
 $database = file_get_contents($datafile);
@@ -19,8 +19,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 			if(isset($_POST['regbox'])){
 				if(regFinder($_POST['inputemail'], $database)==0){
-					// $em = password_hash($_POST['inputemail'], PASSWORD_DEFAULT);
-					// $pw = password_hash($_POST['inputpassword'], PASSWORD_BCRYPT);
 					$em = $_POST['inputemail'];
 					$pw = $_POST['inputpassword'];
 					
@@ -52,18 +50,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 		if(!empty($_POST['inputemail']) || !empty($_POST['inputpassword'])){
 			if(isset($_POST['inputemail']) && isset($_POST['inputpassword'])){
 				if(logFinder($_POST['inputemail'], $_POST['inputpassword'], $database)==1){
-					// header('Content-Type: text/plain; charset=utf-8');
-					// echo 'Login';
 					require('indexed.php');
 					$_SESSION['inputemail'] = $_POST['inputemail'];
 					?><script type="text/javascript">
-						document.getElementById("title").innerHTML = 'Fotokas: <?= $_POST['inputemail'] ?>';
-						document.getElementById("user-name").innerHTML = "<?= $_POST['inputemail'] ?>";
+						document.getElementById("title").innerHTML = 'Fotokas: <?= $_SESSION['inputemail'] ?>';
+						document.getElementById("user-name").innerHTML = "<?= $_SESSION['inputemail'] ?>";
 					</script><?php
 					exit;
 				}else{
-					// header('Content-Type: text/plain; charset=utf-8');
-					// echo 'Vale e-mail/passw';
 					require('index.php');
 					?><script type="text/javascript">
 						alert('Oled sisestanud vale e-maili või parooli, proovi uuesti!');
@@ -100,10 +94,3 @@ function logFinder($em, $pw, $arr){
 	}
 	return $boo;
 }
-
-?>
-
-<html>
-    <script src="log_out.js" type="text/javascript"></script>
-</html>
-

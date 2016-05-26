@@ -1,252 +1,269 @@
-body {
-    background-color: #012345;
-}
-
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box; 
+    box-sizing: border-box; http://enos.itcollege.ee/~msumla/Fotokas/Images/Icons/icon-back.png
 }
 
+body {
+    background-color: #012345;
+    margin: 0px;
+    opacity: 0;
+    -webkit-transition: opacity 1s ease-in;
+       -moz-transition: opacity 1s ease-in;
+        -ms-transition: opacity 1s ease-in;
+         -o-transition: opacity 1s ease-in;
+            transition: opacity 1s ease-in;
+}
+
+.mainarea {
+    display: inline;
+    position: absolute;
+    left: 10%;
+    top: 35%;
+    width: 80%;
+    height: 75%;
+    background: lightgrey;
+    overflow: hidden;
+    border-radius: 0px 0px 0px 0px;
+}
+
+#icon-back {
+    display: inline;
+    padding: 1%;
+    position: absolute;
+    background-position:50% 50%;
+    background-size: cover;
+    max-width: 100%;
+    max-height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
+
+#logformline {
+    display: inline;
+    position: relative;
+    top: 0px;
+    left: -12px;
+    width: 216px;
+    height: 3px;
+    background: #012345;
+}
+
+.login-area {
+    display: none;
+    position: absolute;
+    top: 25%;
+    right: 10%;
+    /*background: darkgrey;
+    width: 300px;
+    height: 320px;
+    border-radius: 10px 0px 5px 5px;*/
+}
+
+.regin-area {
+    display: none;
+    position: absolute;
+    top: 25%;
+    right: 10%;
+    /*background: darkgrey;
+    width: 300px;
+    height: 320px;
+    border-radius: 10px 0px 5px 5px;*/
+}
+
+.upload-area {
+    display: none;
+    position: absolute;
+    background: darkgrey;
+    text-align: left;
+    width: 20%;
+    height: 100px;
+    top: 120px;
+    left: 10%;
+    border: 2px solid black;
+    margin: 50px 50px 50px 50px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+#albums-box {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.albums-area {
+    display: none;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    width: 99%;
+    height: 99%;
+}
+
+#feed-box {
+    display: none;
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    width: 30%;
+    height: 20%;
+    text-align: left;
+    color: blue;
+    outline: 0;
+    background: darkgrey;
+    opacity: 0.8;
+    margin: 4px 4px 4px 4px;
+    border: 1px solid black;
+    border-radius: 10px 10px 10px 10px;
+}
 
 .heading {
+    display: inline;
     position: fixed;
-    left: 10%;
-    top: 30px;
+    padding: 0%;
     background: lightgrey;
-    height: 60px;
+    top: 5%;
+    left: 10%;
     width: 80%;
-    padding: 0px;
-    display: inline-flex;
+    -webkit-transform: translate(0%, 0%)
 }
 
 .heading-line {
-    display: none;
+    display: inline;
     position: fixed;
-    left: 0px;
-    top: 60px;
-    background: lightgrey;
-    height: 30px;
-    width: 100%;
+    left: 10%;
+    top: 100%;
+    background: orange;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 20%;
+    width: 80%;
     padding: 0px;
-    display: inline-flex;
+}
+
+.heading-line-up {
+    display: inline;
+    position: fixed;
+    background: #012345;   
+    width: 100%;
+    height: 1%;
+    left: 0%;
+    top: 0%;
+}
+
+#user-name {
+    position: absolute;
+    right: 5%;
+    overflow: hidden;
+    top: 20%;
+    color: black;
+    font-size: 15px;
+    max-height: 50%;
 }
 
 #logoimage {
-	display: inline;
+	display: inline-block;
     position: relative;
 	overflow: visible;
-    left: -90%;
-    top: 5px;
-    width: 50px;
-    height: 50px;
+    max-width: 75%;
+    max-height: 75%;
+    margin: 5% 5% 5% 5%;
 }
 
-#logotext {
-	display: inline;
+#logintoggle1, #logintoggle0, #regintoggle1, #regintoggle0, #flogouttoggle1,
+#flogouttoggle0, #uploadbutton,
+#albumsbutton, #feedbutton, #infobutton, #menutoggle1, #menutoggle0, #uploadbutton-text {
+    display: inline-block;
     position: relative;
-	overflow: visible;
-    left: 50px;
-    top: 0px;
-    text-decoration: none;
-    font-family: Stencil, serif;
-    font-size: 30px;
-    color: darkgreen;
-    cursor: hand;
-    pointer-events: auto;
-}
-
-.buttons {
-	display: inline;
-}
-
-#logintoggle1, #logintoggle0, #uploadbutton,
-#albumsbutton, #feedbutton, #infobutton, .user-name {
-    display: block;
-    position: fixed;
 	float: left;
-	overflow: hidden;
-    top: 30px;
-    margin: 0px;
-    border: 0px solid aliceblue;
+	overflow: visible;
+    top: 0em;
+    left: 0em;
+    margin: 0% 0% 0% 0%;
 	outline: 0;
-    height: 60px;
-    width: 80px;
-    min-width: 80px;
-    max-width: 80px;
+/*	border: 1px solid darkgrey;*/
+    height: 100%;
+    width: 100%;
     text-align: center;
-    font-size: 16px;
+    font-size: 14px;
     color: black;
-    background: blue;
     background-color: transparent;
 }
 
-#logintoggle1:hover, #logintoggle0:hover, #uploadbutton:hover,
-#albumsbutton:hover, #feedbutton:hover, #infobutton:hover {
+#logintoggle1:hover, #logintoggle0:hover, #regintoggle1:hover, #regintoggle0:hover, #logouttoggle1:hover,
+#logouttoggle0:hover, #uploadbutton:hover,
+#albumsbutton:hover, #feedbutton:hover, #infobutton:hover, #menutoggle1:hover, #menutoggle0:hover {
 	background-color: darkgrey;
 }
 
-#logintoggle1 {
-	display: block;
-    /*position: fixed;
-	float: left;
-	overflow: hidden;*/
-    right: 11%;
-    /*top: 0px;
-    margin: 0px;
-    border: 0px solid aliceblue;
-	outline: 0;
-    height: 40px;*/
+#uploadbutton {
+    left: ;
+}
+
+#uploadbutton-text {
+    left: 30%;
+    display: none;
+    width: 60px;
     min-width: 60px;
-    /*text-align: center;
-    font-size: 13px;
-    color: black;
-    background: blue;
-    background-color: transparent;*/
+}
+
+#uploadbutton:hover #uploadbutton-text {
+    position: fixed;
+    display: inline-block;
+	background-color: darkgrey;
+}
+
+#albumsbutton {
+	left: ;
+}
+
+#feedbutton {
+    left: ;
+}
+
+#infobutton {
+    left: ;
+}
+
+#logintoggle1 {
+    display: inline-block;
 }
 
 #logintoggle0 {
     display: none;
-    /*position: fixed;
-	float: left;
-	overflow: hidden;*/
-    right: 11%;
-    /*top: 0px;
-    margin: 0px;
-    border: 0px solid aliceblue;
-	outline: 0;
-    height: 40px;*/
-    min-width: 60px;/*
-    text-align: center;
-    font-size: 13px;
-    color: black;
-    background: blue;*/
-    background-color: darkgrey;
 }
 
-.user-name {
-    display: block;
-    position: fixed;
-    right: 16%;
-    width: inherit;
-    overflow: inherit;
-    top: 50px;
-    color: black;
+#logouttoggle1 {
+    display: inline-block;
 }
 
-#uploadbutton {
-    /*display: block;
-    position: fixed;
-	float: left;
-	overflow: hidden;*/
-    left: 30%;
-    /*top: 0px;
-    margin: 0px;
-    border: 0px solid aliceblue;
-	outline: 0;
-    height: 40px;*/
-    min-width: 60px;
-    /*text-align: center;
-    font-size: 13px;
-    color: black;
-    background: blue;
-    background-color: transparent;*/
-}
-
-/*#uploadbutton:hover {
-	background-color: darkgrey;
-}*/
-
-#albumsbutton {
-	left: 37%;
-}
-
-/*#albumsbutton:hover {
-	background-color: darkgrey;
-}*/
-
-#feedbutton {
-    /*display: block;
-    position: fixed;
-	float: left;
-	overflow: hidden;*/
-    left: 47%;
-    /*top: 0px;
-    margin: 0px;
-    border: 0px solid aliceblue;
-	outline: 0;
-    height: 40px;
-    width: 81px;
-    text-align: center;
-    font-size: 13px;
-    color: black;
-    background: blue;
-    background-color: transparent;*/
-}
-
-/*#feedbutton:hover {
-	background-color: darkgrey;
-}*/
-
-#infobutton {
-	left: 57%;
-}
-	
-#srchinput {
+#logouttoggle0 {
     display: none;
-    position: relative;
-    right: -400%;
-    top: 17.5px;
-    height: 25px;
-    text-align: center;
-    border: solid 1px darkgrey;
-    border-radius: 4px;
-	margin: 0 0 0 0;
-    color: black;
 }
 
-::-moz-placeholder {
-    font-size: 12px;
+#regintoggle1 {
+    display: inline-block;
+}
+
+#regintoggle0 {
+    display: none;
+}
+
+#menutoggle1 {
+    display: inline-block;
+}
+
+#menutoggle0 {
+    display: none;
 }
 
 #srchbttn {
     display: none;
 }
 
-.logform {
-    display: none;
-    position: fixed;
-    background: darkgrey;
-    width: 300px;
-    height: 280px;
-    left: 45px;
-    top: 40px;
-    border-radius: 10px 0px 5px 5px;
-}
-
-#logformline {
-    position: relative;
-    top: 0px;
-    left: -12px;
-    display: block;
-    width: 216px;
-    height: 3px;
-    background: #012345;
-}
-
 #n6us {
 	cursor: pointer;
-}
-
-.mainarea {
-    position: fixed;
-    left: 10%;
-    top: 90px;
-    background: lightgrey;
-    height: 60px;
-    width: 80%;
-    padding: 0px;
-    display: inline-flex;
 }
 
 div.autor {
