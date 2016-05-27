@@ -34,9 +34,6 @@ $database = json_decode($database, true);
 					    $database = json_encode($database);
 					    file_put_contents($datafile, $database);
 					    
-//					    header('Content-Type: text/plain; charset=utf-8');
-	//				    echo "Regatud, saada meil ja header location index";
-					    
 					    require('index.php');
 					    exit;
 				    }
