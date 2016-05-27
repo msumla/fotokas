@@ -1,18 +1,21 @@
 <?php
 
 $path = 'Database/feed_back.txt';
-if( !file_exists($path){
-    $datafile = fopen($path, "w");
-    fwrite($datafile, 'The feedback:'.'\n')
-}
+// $datafile = fopen($path, "a") or die('Faili ei leitud!');
+// if( empty(fread($datafile, 1)) ){
+	// fwrite($datafile, 'The feedback:');
+	// fwrite($datafile, "\n");
+// }
 
 if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
 	if( isset($_POST['feedback-text']) ){
 		if( !empty($_POST['feedback-text']) ){
-            $text = $_POST['feedback-text'];
-            fwrite($datafile, $text);
-            fclose($datafile);
-
+			$data_file = fopen($path, "a+") or die('Faili ei leitud!');
+			$text = $_POST['feedback-text'];
+			fwrite($data_file, $text);
+			fwrite($data_file, "\n");
+			fclose($data_file);
+			require('index.php');
 			exit;
 		}
 	}

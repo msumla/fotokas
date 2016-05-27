@@ -28,16 +28,16 @@ body {
     opacity: 1;
 	background-image: url('Images/Icons/icon.png');
 	background-repeat: no-repeat;
-    width: 100%;
-    height: 100%;
+    width: 75%;
+    height: 75%;
     position: fixed;
 	left: 31%;
-	top: 26%;
-    -webkit-transition: opacity 1s ease-in;
-       -moz-transition: opacity 1s ease-in;
-        -ms-transition: opacity 1s ease-in;
-         -o-transition: opacity 1s ease-in;
-            transition: opacity 1s ease-in;
+	top: 23%;
+    -webkit-transition: opacity 1s ease;
+       -moz-transition: opacity 1s ease;
+        -ms-transition: opacity 1s ease;
+         -o-transition: opacity 1s ease;
+            transition: opacity 1s ease;
 }
 
 .mainarea {
@@ -62,7 +62,7 @@ body {
     max-height: auto;
     top: 50%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%)
+    -webkit-transform: translate(-50%, -50%);
 }
 
 .dreg_log_menu-area {
@@ -96,6 +96,12 @@ body {
     width: 300px;
     height: 320px;
     border-radius: 10px 10px 10px 10px;*/
+}
+
+.menu-area {
+	display: none;
+	position: absolute:
+	right: 0%;
 }
 
 .upload-area {
@@ -149,7 +155,17 @@ body {
     position: absolute;
     left: 25%;
     top: 20%;
-    
+}
+
+.colors {
+	border: 2px solid black
+	padding: 2px;
+	font-weight: bold;
+}
+
+#colorbutton {
+	width: 10em;
+	text-align: center;
 }
 
 .heading {
@@ -176,24 +192,14 @@ body {
     padding: 0px;
 }
 
-.heading-line-up {
-    display: inline;
-    position: absolute;
-    background: #012345;   
-    width: 100%;
-    height: 2%;
-    left: 0%;
-    top: -10%;
-}
-
 #user-name {
     display: inline;
     position: fixed;
     right: 2.5%;
-    top: 100%;
+    top: 104%;
     overflow: hidden;
     color: black;
-    font-size: 2em;
+    font-size: 3vh;
 }
 
 #logoimage {
@@ -203,6 +209,27 @@ body {
     max-width: 75%;
     max-height: 75%;
     margin: 5% 5% 5% 5%;
+	z-index: 1;
+}
+
+#logoimageflash {
+	display: inline-block;
+	position: relative;
+	background: url('Images/Icons/flash.png');
+	width: 50%;
+	height: 50%;
+    -webkit-transform: scale(0.5);
+	   -moz-transform: scale(0.5);
+		 -o-transform: scale(0.5);
+            transform: scale(0.5);
+	z-index: 0;
+}
+			
+#logimageflash:hover {
+    -webkit-transform: scale(1);
+	   -moz-transform: scale(1);
+		 -o-transform: scale(1);
+            transform: scale(1);
 }
 
 #logintoggle1, #logintoggle0, #regintoggle1, #regintoggle0, #flogouttoggle1,
@@ -221,42 +248,43 @@ body {
     text-align: center;
     font-size: 14px;
     color: black;
-    background-color: transparent;
+	background: transparent;
+    -webkit-transform: scale(0.5);
+	   -moz-transform: scale(0.5);
+		 -o-transform: scale(0.5);
+            transform: scale(0.5);
+    -webkit-transition: 1s ease;
+	   -moz-transition: 1s ease;
+         -o-transition: 1s ease;
+            transition: 1s ease;
 }
 
 #logintoggle1:hover, #logintoggle0:hover, #regintoggle1:hover, #regintoggle0:hover, #logouttoggle1:hover,
 #logouttoggle0:hover, #uploadbutton:hover,
 #albumsbutton:hover, #feedbutton:hover, #infobutton:hover, #menutoggle1:hover, #menutoggle0:hover {
-	background-color: darkgrey;
+	background: darkgrey;
+    -webkit-transform: scale(1);
+	   -moz-transform: scale(1);
+		 -o-transform: scale(1);
+            transform: scale(1);
 }
 
 #uploadbutton {
-    left: ;
+    display: inline-block;
 }
 
-#uploadbutton-text {
+#2uploadbutton-text {
+    display: inline-block;
     left: 30%;
-    display: none;
+	top: 30%;
     width: 60px;
     min-width: 60px;
 }
 
-#uploadbutton:hover #uploadbutton-text {
+#2uploadbutton:hover, #2uploadbutton-text {
     position: fixed;
     display: inline-block;
 	background-color: darkgrey;
-}
-
-#albumsbutton {
-	left: ;
-}
-
-#feedbutton {
-    left: ;
-}
-
-#infobutton {
-    left: ;
 }
 
 #logintoggle1 {

@@ -1,10 +1,10 @@
 <?php
 
-session_start();
+//session_start();
 
-if ( empty($_SESSION['csrf_token']) ){
-    $_SESSION['csrf_token'] = bin2hex(openssl_random_pseudo_bytes(20));
-}
+// if ( empty($_SESSION['csrf_token']) ){
+    // $_SESSION['csrf_token'] = bin2hex(openssl_random_pseudo_bytes(20));
+// }
 
 $datafile = 'Database/login_data.txt';
 $database = file_get_contents($datafile);
@@ -37,17 +37,17 @@ $database = json_decode($database, true);
 //					    header('Content-Type: text/plain; charset=utf-8');
 	//				    echo "Regatud, saada meil ja header location index";
 					    
-					    header('Location: index.php');
+					    require('index.php');
 					    exit;
 				    }
 				
 				    if( regFinder($_POST['inputemail'], $database)==1 ){
+					    require('index.php');
 					    ?><script type="text/javascript">
 						    var em = '<?php echo $_POST['inputemail']; ?>';
 						    alert(em + ' on juba registreeritud, proovi uuesti!');
 					    </script><?php
-					    //require('index.php');
-			//		    exit;
+					    exit;
 				    }
 			    }
 		    } // register
@@ -57,12 +57,11 @@ $database = json_decode($database, true);
 		    if( !empty($_POST['inputemail']) || !empty($_POST['inputpassword']) ){
 			    if( isset($_POST['inputemail']) && isset($_POST['inputpassword']) ){
 				    if( logFinder($_POST['inputemail'], $_POST['inputpassword'], $database)==1 ){
-					    $_SESSION['input_email'] = $_POST['inputemail'];
-					    require('index.php');                        
-
+					    $_SESSION['input_user'] = $_POST['inputemail'];
+					    header('Location: index.php');
 					    ?><script type="text/javascript">
-						    document.getElementById("title").innerHTML = 'Fotokas: <?= $_POST['inputemail'] ?>';
-						    document.getElementById("user-name").innerHTML = "<?= $_SESSION['input_email'] ?>";
+						    //document.getElementById("title").innerHTML = 'Fotokas: <?= $_SESSION['input_user'] ?>';
+						    //document.getElementById("user-name").innerHTML = "<?= $_SESSION['input_user'] ?>";
 					    </script><?php
   
 //    				     header('Content-Type: text/plain; charset=utf-8');
@@ -86,12 +85,13 @@ $database = json_decode($database, true);
 function regFinder($em, $arr){
 	foreach( $arr as $i ){
 		if( $em == $i['em'] ){
-			return true;
+			$boo = 1;
 			break;
 		}else{
-			return false;;
+			$boo = 0;
 		}
 	}
+	return $boo;
 }
 
 function logFinder($em, $pw, $arr){

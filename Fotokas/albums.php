@@ -14,7 +14,7 @@ $style = '"style="
 if( file_exists($dir_thumbs) ){
     foreach( $files as $file ){
         if( file_exists($file) ){
-            echo '<img src="', $file, $style,  '">';
+            echo '<a href=" ', $file, ' "><img src=" ', $file, $style, ' "></a>';
         }
     }
 }
