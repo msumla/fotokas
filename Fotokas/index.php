@@ -1,7 +1,6 @@
 <?php
 
-function my_session_start()
-{
+function my_session_start(){
       $sn = session_name();
       if (isset($_COOKIE[$sn])) {
           $sessid = $_COOKIE[$sn];

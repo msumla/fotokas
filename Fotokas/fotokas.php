@@ -97,11 +97,6 @@
 					</div>
 					<button class="btn btn-lg btn-primary btn-block" type="submit" name="logoutb">Logi välja</button>
                 </form>
-                
-                <!--<form class="form-signin" method="post" action="login.php">
-                    <input type="hidden" name="action" value="logout">
-                    <button class="btn btn-lg btn-primary btn-block" type="submit" name="logoutb">Logi välja</button>
-                </form>-->
             </div>
         </div>
     </div>
@@ -144,16 +139,6 @@
 			        </td>
                                         
                     <td>
-			        <!--    <div class="logout-show">
-				            <input type="image" id="logouttoggle1" img src="Images/Icons/menu.png" alt="Menu">
-			            </div>
-                    </td>
-
-                    <td>
-			            <div class="logout-hide">
-				            <input type="image" id="logouttoggle0" img src="Images/Icons/menu.png" alt="Menu">
-			            </div>
-                    </td> -->
                     
 			        <td>
 			            <div class="feedback">
