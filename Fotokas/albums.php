@@ -1,7 +1,8 @@
 <?php
 
 $dir_thumbs = './Images/Thumbnails/';
-$files = glob($dir_thumbs . '*.jpg');
+$files = glob($dir_thumbs . '*.*');
+$dir_origs = 'http://enos.itcollege.ee/~msumla/Fotokas/Uploads/';
 $style = '"style="
     position: relative;
     display: inline;
@@ -14,7 +15,11 @@ $style = '"style="
 if( file_exists($dir_thumbs) ){
     foreach( $files as $file ){
         if( file_exists($file) ){
-            echo '<a href=" ', $file, ' "><img src=" ', $file, $style, ' "></a>';
+            echo '
+				<a href=" ', $dir_origs, substr($file, 40), ' " target="_blank">
+					<img src=" ', $file, $style, ' ">
+				</a>';
+			// findFile($file);
         }
     }
 }

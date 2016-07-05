@@ -57,8 +57,8 @@ $database = json_decode($database, true);
 					    $_SESSION['input_user'] = $_POST['inputemail'];
 					    header('Location: index.php');
 					    ?><script type="text/javascript">
-						    //document.getElementById("title").innerHTML = 'Fotokas: <?= $_SESSION['input_user'] ?>';
-						    //document.getElementById("user-name").innerHTML = "<?= $_SESSION['input_user'] ?>";
+						    document.getElementById('title').innerHTML = 'Fotokas: <?= $_SESSION['input_user'] ?>';
+						    document.getElementById('user-name').innerHTML = <?= $_SESSION['input_user'] ?>;
 					    </script><?php
   
 //    				     header('Content-Type: text/plain; charset=utf-8');
